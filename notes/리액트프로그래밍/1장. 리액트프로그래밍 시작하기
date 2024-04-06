@@ -20,6 +20,7 @@ Typescript는 언어이고... (자바스크립트에 문법이 더 추가된 언
 
 
 1.2 create my first application
+
 # mkdir begining_react
 # npm create vite@5.1.0 my-react-app -- --template react
 => then vite will create a new project named 'my-react-app'
@@ -34,6 +35,27 @@ vite.config.js file instruct Vite on how to run the application.
 ( plugins: [react()] )
 
 * package.json => stores the information about the project
+package.json includes the packages required to run the project without any issues.
+
+* .eslintrc.cjs => ESLint rules.
+
+* index.html => static HTML document. this going to be used when running the React application.
+
+* under the src/ path => React application codes is written.
+
+* src
+|- App.css
+|- App.jsx
+|- assets
+|  |- react.svg
+|- index.css
+|- main.jsx
+
+App.css => contains the CSS rules applied to the App.jsx file
+App.jsx => main React application code
+assets/ => contains the assets required for this project.
+index.css => root CSS file applied globally to the application
+main.jsx =>  the root file that access the index.html file to render the React application.
 
 
 
