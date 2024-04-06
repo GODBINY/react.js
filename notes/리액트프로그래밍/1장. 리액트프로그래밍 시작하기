@@ -17,4 +17,19 @@ Typescript는 언어이고... (자바스크립트에 문법이 더 추가된 언
 > 리액트의 제약사항
  - 렌더 함수는 순수 함수(함수 내에서 외부 값을 변경해서는 안되며, 동일한 인자가 들어가면 항상 같은 결과가 나와야 하는 함수)
  - 컴포넌트 상탯값은 불변 객체로 관리해야함. (컴포넌트의 상태값을 가지고 활용할 때에는 새로운 객체를 사용해서 복사해서 쓰던가 해야함)
- 
+
+
+1.2 create my first application
+# mkdir begining_react
+# npm create vite@5.1.0 my-react-app -- --template react
+=> then vite will create a new project named 'my-react-app'
+(vite / create react app)
+
+# cd my-react-app
+# npm install
+# npm run dev
+
+
+
+
+
