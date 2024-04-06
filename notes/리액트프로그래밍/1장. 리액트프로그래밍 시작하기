@@ -29,6 +29,11 @@ Typescript는 언어이고... (자바스크립트에 문법이 더 추가된 언
 # npm install
 # npm run dev
 
+* vite.config.js => configutration file
+vite.config.js file instruct Vite on how to run the application.
+( plugins: [react()] )
+
+* package.json => stores the information about the project
 
 
 
