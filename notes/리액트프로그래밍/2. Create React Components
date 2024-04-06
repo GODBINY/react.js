@@ -1,0 +1,36 @@
+* in react, component is a single independent unit of a user interface.
+A component is made up of a function that returns a single UI element.
+
+
+#App.jsx
+function App () {
+  return null
+}
+export default App
+
+=> when you want a component to render nothing, you can return a null or false instead of an element.
+
+* what is .jsx?
+=> It's an exetention of JavaScript that produces JavaScript-powered HTML elements.
+=> JSX (JavaScript XML, formally JavaScript Syntax eXtension) is a JavaScript extension that allows creation of Document Object Model (DOM) trees using an XML-like syntax.
+=> none-pure js file 
+
+* a component must always return a single element. when you need to return multiple elements, you need to wrap all of them in a single element like a <div>.
+return (
+    <div>
+      <h1>element1</h1>
+      <h2>element2</h2>
+    <div>
+)
+
+BUT this will make your application render one extra <div> element in the browser.
+to avoid this clutter, you can use an empty tag <>
+
+return (
+  <>
+    <h1>element1</h1>
+    <h2>element2</h2>
+  </>
+)
+
+the empty tag above is a React feature called a "Fragment".
