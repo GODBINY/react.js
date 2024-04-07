@@ -15,3 +15,89 @@ function App(){
   const myElement = <h1>hi</h1>
   return myElement
 }
+
+* just with JSX, you can also embed JavaSript expression inside an element by usin curly brackets
+
+const lowerClass = 'text-lowercase';
+const text = "Hello"
+const App = <h1 className={lowerClass}>{text}</h1>
+
+
+* how to render a list using jsx
+
+const users = [
+  { id: 1, name: 'gb', role: 'gf' }
+  { id: 2, name: 'hk', role: 'bf' }
+  { id: 3, name: 'sole', role: 'pet' }
+]
+you can use the map() function.
+
+/////
+export default function TableComponent () {
+    const users = [
+        { id: 1, name: 'gb', role: 'gf' },
+        { id: 2, name: 'hk', role: 'bf' },
+        { id: 3, name: 'sole', role: 'pet' }
+    ]
+    return (
+        <>
+        <p>Rendering an Array Object in React</p>
+        <ul>{
+           users.map(function(user){
+               return (
+                   <li key={user.id}> {user.name}&apos;s role is {user.role} </li>
+               )
+           })
+        }</ul>
+        </>
+    )
+}
+/////
+
+inside React, you don't need to store the return value of the map() function in a variable.
+A prop(==> property) is an input that you can pass to a component when rendering that component.
+the key prop is an special prop that React will use to determine which child element has been changed, added, or removed from the list
+
+
+It is recommended that you put the unique identifier of your data as the key value. 
+In the example above, you can use the user.id data. 
+Here's how you pass a key prop for each <li> element:
+
+/////
+export default function TableComponent () {
+    const users = [
+        { id: 1, name: 'gb', role: 'gf' },
+        { id: 2, name: 'hk', role: 'bf' },
+        { id: 3, name: 'sole', role: 'pet' }
+    ]
+    return (
+        <>
+        <p>1. Rendering an Array Object in React - with key props from array object</p>
+        <ul>{
+           users.map(function(user){
+               return (
+                   <li key={user.id}> {user.name}&apos;s role is {user.role} </li>
+               )
+           })
+        }</ul>
+            <p>2. Renderina an Array Object in React - with key props from index</p>
+            <ul>{
+                users.map(function(user,index){
+                    return(
+                        <li key={index}> {user.name}&apos;s role is {user.role} </li>
+                    )
+                })
+            }</ul>
+        </>
+    )
+}
+/////
+
+also, you can add the class attribute to your elements by using the className keyword:
+
+function App() {
+  return <h1 className='text-lowercase'>Hello~</h1>
+}
+
+class: reserved for JavaScript classes.
+className: reserved for jsx classes.
