@@ -53,3 +53,12 @@ export default App
 but you don't to need to use Fragment Tag. it's optional.
 
 to render a React component into the browser, you need to create a root React Component using the ReactDOM library. (main.jsx)
+you need to have an HTML file as the source from which your React component is rendered.
+usually, a very bassic HTML document with a <div> is enough, as you can see in the index.html file.
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+Notice how ReactDOM is imported from react-dom package, and the document.getElementById('root') is used to select the <div> element below
