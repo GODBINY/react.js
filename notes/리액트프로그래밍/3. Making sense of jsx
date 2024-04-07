@@ -1,0 +1,17 @@
+I learned that a component must always have a return statement that contatins element to render on the screen.
+
+////
+function App() {
+  return <h1>Hello World</h1>
+}
+////
+
+the tag <h1> looks like a regular HTML tag, but it's actually a special template language included in React called JSX.
+JSX is a syntax extension that produces JavaScript powered HTML elements.
+Javascript variables can be returned from function calls.
+
+////
+function App(){
+  const myElement = <h1>hi</h1>
+  return myElement
+}
