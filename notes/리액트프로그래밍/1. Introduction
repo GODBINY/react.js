@@ -49,7 +49,7 @@ package.json includes the packages required to run the project without any issue
 |- assets
 |  |- react.svg
 |- index.css
-|- main.jsx
+|- main.jsx => root React component (usin g the ReactDOM library)
 
 App.css => contains the CSS rules applied to the App.jsx file
 App.jsx => main React application code
