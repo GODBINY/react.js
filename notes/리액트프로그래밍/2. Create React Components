@@ -37,6 +37,7 @@ the empty tag above is a React feature called a "Fragment".
 
 you can also import the Fragement module from React to maki it explicit.
 
+/////
 import { Fragment } from 'react';
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
 }
 
 export default App
+/////
 
 but you don't to need to use Fragment Tag. it's optional.
 
@@ -61,4 +63,26 @@ usually, a very bassic HTML document with a <div> is enough, as you can see in t
   <script type="module" src="/src/main.jsx"></script>
 </body>
 
-Notice how ReactDOM is imported from react-dom package, and the document.getElementById('root') is used to select the <div> element below
+Notice how ReactDOM is imported from react-dom package, and the document.getElementById('root') is used to select the <div> element below.
+
+for example, you can make code like this:
+///// main.jsx /////
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+
+function App() {
+  return <h1>11</h1>
+}
+
+ReactDom.createRoot(doucument.getElementById('root')).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+)
+//// and remove App.jx
+=> BUT IT'S CONFUSING to have multiple components in one file, so let's not to this...
+
+
+
+
+
