@@ -1,1 +1,31 @@
+* props and states are used to pass data inside React components. 
+ - Props (  or, properties ) are inputs passed down from a parent component to its child component.
+ - States are variables defined and managed inside the components
 
+######
+export default function ParentComponent() {
+    return (
+        <>
+            <ChildCmp1
+                name="GB"
+                age={100}
+                nickname={["GB","GOD"]}
+                child2={ChildCmp2} /* you can even pass a function into props !!! */
+            />
+            <ChildCmp2 />
+            <ChildCmp3 />
+            <ChildCmp4 />
+        </>
+    );
+}
+
+function ChildCmp1(props) {
+    return <h1> my name is { props.name } and I am { props.age } years old. {props.child2()}</h1>
+...
+######
+
+⭐️⭐️⭐️⭐️if you pass anyting other than a string as prop value, you need to put the value in curly brackets.⭐️⭐️⭐️⭐️
+(numbers, functions, arrays, objects......)
+
+* props ar immutable.
+prop's value can't be changed no matter what happens.
