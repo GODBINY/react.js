@@ -29,3 +29,69 @@ function ChildCmp1(props) {
 
 * props ar immutable.
 prop's value can't be changed no matter what happens.
+React props can't be changed once you declare them.
+
+if you want to change your data, you can use State.
+
+* In React, states are arbitary data. you can declare and manage State in your components.
+To create a state in React, you need to call the useSate hook as shown below:
+/////
+import { useState } from 'react'
+function ParentCmp() {
+ const [name, setName] = useState('GB')
+}
+export default ParentCmp
+/////
+
+in react, hooks ar functions that allow you to tap into the features provided by React.
+The useState hook is a function that enables you to put value into the state mechanism.
+
+when calling the useState() function, you can pass an argument that will serve as the initial value of the state.
+The function then returns an array with two elements.
+
+you can create element's name, that just means [ state name , function that allows you to change the state ]
+but, recommended to use : [something, setSomething]
+
+/////
+function ChildCmp1(props) {
+    const [bfName, setBfName] = useState('HK')
+    return <>
+        <h1> my name is { props.name } and I am { props.age } years old. {props.child2()} my boyfriend&apos;s nickname is {bfName} </h1>
+        <button onClick={() => setBfName('khk')}>change name</button>
+        </>
+}
+//////
+
+
+* how to pass state to a child component
+you can pass the state into any child component. when you need to update the state from a child component, 
+you neeed to pass the setSomething function received from the useState hook.
+////////
+import {useState} from 'react'
+export default function ParentComponent() {
+ const [name, setName] = useState('Parent')
+    return (
+
+        <>
+            <ChildCmp1
+                name="GB"
+                age={100}
+                nickname={["GB","GOD"]}
+                child3={ChildCmp3} /* you can even pass a function into props !!! */
+                parentName={name}
+                setParentName={setName}
+            />
+            <ChildCmp2 />
+            <ChildCmp3 />
+            <ChildCmp4 />
+        </>
+    );
+}
+...
+function ChildCmp1(props) {
+ return <>
+  <h1>name: {props.name}<h1>
+  <button onClick={()=>props.setName('PARENT')}>Change name</button>
+ </>
+}
+////////
