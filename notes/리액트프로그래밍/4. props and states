@@ -95,3 +95,6 @@ function ChildCmp1(props) {
  </>
 }
 ////////
+* react devtools to inspect states and props
+
+https://chromewebstore.google.com/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi
