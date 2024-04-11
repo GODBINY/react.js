@@ -1,0 +1,13 @@
+you can control what output is being rendered by a component by implementing conditional rendering in your JSX code.
+
+For example:
+
+function App(props) {
+  const { user } = props
+
+  if(user) {
+    return <button>Logout</button>
+  }
+  return <button>Login</button>
+}
+export default App
