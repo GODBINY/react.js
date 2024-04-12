@@ -11,3 +11,7 @@ function App(props) {
   return <button>Login</button>
 }
 export default App
+
+
+* Partial Rendering with a Regular Variable
+
