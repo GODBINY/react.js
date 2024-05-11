@@ -1,0 +1,35 @@
+# cafe24에 호스팅 하기 (삽질 엄청함..)
+
+1. node.js 서버 개설
+2. express용 빈 폴더 만들기
+3. npm init 으로 노드 기본설정
+  npm init은 package.json 파일을 생성하여 Node 패키지에 관한 정보와 의존 중인 버전에 관한 정보로 node.js에서 사용하는 모듈들을 패키지로 만들기 위해 입력하는 커맨드이다
+4. npm install express --save 로 express 서버 설치하기
+5. app.js 파일 생성하기 -> 하지만 카페24는 web.js를 인식한다고 함. 파일 이름 차이인가본데..
+
+  ## web.js 내용 시작 ##
+  var express = require("express");
+  var path = require("path");
+  var app = express();
+  var PORT = 8001;
+  
+  app.use(express.static(__dirname));
+  app.get("/[^.]+$", function (req, res) {
+      res
+          .set("Content-Type", "text/html")
+          .sendFile(path.join(__dirname, "./index.html"));
+  });
+  app.listen(PORT, () => {
+      console.log(`server started on PORT ${PORT}`);
+  });
+  ## web.js 내용 끝 ##
+
+6. web.js(혹은 app.js)를 npm start나 node web.js(app.js)로 실행되면 내가 지정한 포트에 잘~ 실행되는것을 확인할 수 있다.
+
+* 서버에 변경이 있을 때마다 서버를 껐다 키는 것은 불편하므로, nodemon을 설치해준다. (npm install nodemon -g) -g 은 컴퓨터 전체에 설치하는 글로벌 install 옵션이다.
+
+7. 그러고 나서 원본 프로젝트에서 npm run build 하면 dist 폴더 안에 결과물이 들어가지는데, 그 폴더 안에 있는걸 몽조리 express 하위에 넣으면 됨! (index.html이 자동으로 인식되나봐 히히)
+
+8. 이미지 파일이 인식되지 않는 경우가 발생했는데, 찾아보니 이미지 파일 위치는
+  프로젝트 최상단에서 /pubilc/assets/images 폴더를 만들어서 넣었더니 됐다. pubilc 폴더 안에 넣어야만 하나보다!
+  
